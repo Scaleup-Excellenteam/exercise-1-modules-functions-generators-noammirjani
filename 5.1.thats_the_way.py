@@ -7,7 +7,7 @@ def get_files_starts_with(word, path):
     """
     :param word: str, The starting word to filter the file names.
     :param path: str, The path to the directory.
-    :return: list of strings, conatains all the file names in the directory that start with the given word.
+    :return: list of strings, contains all the file names in the directory that start with the given word.
     """
     try:
         return [file.startswith(word) and os.path.isfile(os.path.join(path, file)) for file in os.listdir(path)]
@@ -15,4 +15,6 @@ def get_files_starts_with(word, path):
         return str(e)
 
 
-print(get_files_starts_with("deep", "/Users/noammirjani/PycharmProjects/python-week5/temp2"))
+if __name__ == '__main__':
+    dir_path = "images"
+    print(get_files_starts_with("deep", dir_path))
